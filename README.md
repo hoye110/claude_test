@@ -1,6 +1,6 @@
 # MCI Viet Nam – Student System (redesign)
 
-Giao diện mới cho trang đăng nhập [hocvien.mcivietnam.com](https://hocvien.mcivietnam.com/): tone cam, phong cách hiện đại (gradient mờ, kính mờ, bo góc lớn) lấy cảm hứng từ bộ *Startup 3 Blocks* của Designmodo.
+Giao diện mới cho trang đăng nhập [mcivietnam.com](https://mcivietnam.com/): tone cam, phong cách hiện đại (gradient mờ, kính mờ, bo góc lớn) lấy cảm hứng từ bộ *Startup 3 Blocks* của Designmodo.
 
 ## Tính năng
 
