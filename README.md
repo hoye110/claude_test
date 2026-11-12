@@ -18,7 +18,8 @@ Hiệu ứng: hiện dần khi cuộn, thanh tiến trình cuộn, header thu g�
 ## Lưu ý
 
 - Ảnh (logo, banner, giảng viên, đối tác, bài viết) đang lấy trực tiếp từ `mcivietnam.com` / `cdn.mcivietnam.com`.
-- Form tư vấn và form đăng nhập hiện chỉ là **demo phía giao diện**; cần nối vào API thật.
+- **Form "Nhận tư vấn lộ trình học miễn phí"** lưu thông tin khách vào Supabase (project `mci-website`, bảng `public.consultation_requests`). Cấu hình ở `config.js`, cấu trúc bảng ở `supabase/migrations/`. Row Level Security chỉ cho phép khách **thêm** dữ liệu; xem danh sách trong Supabase Dashboard → Table Editor.
+- Form đăng nhập (`login.html`) vẫn chỉ là **demo phía giao diện**.
 
 ## Chạy & deploy
 

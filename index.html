@@ -405,7 +405,9 @@
               </select>
               <label for="cf-track">Lộ trình quan tâm *</label>
             </div>
-            <div class="field"><textarea id="cf-msg" rows="3" placeholder=" "></textarea><label for="cf-msg">Nội dung</label></div>
+            <div class="field"><textarea id="cf-msg" rows="3" placeholder=" " maxlength="2000"></textarea><label for="cf-msg">Nội dung</label></div>
+            <!-- honeypot: hidden from people, bots tend to fill it -->
+            <input class="hp" type="text" name="website" id="cf-website" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="btn btn-primary btn-lg btn-block" type="submit"><span class="btn-label">Gửi thông tin</span><span class="spinner" aria-hidden="true"></span></button>
             <p class="form-note">Bằng việc gửi thông tin, bạn đồng ý với <a href="https://mcivietnam.com/privacy-policy/">chính sách bảo mật</a>.</p>
           </form>
@@ -457,6 +459,7 @@
   </a>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <script src="config.js"></script>
   <script src="home.js"></script>
 </body>
 </html>

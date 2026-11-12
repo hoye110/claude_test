@@ -181,25 +181,70 @@
     toastEl.textContent = msg; toastEl.classList.add("show");
     clearTimeout(toast.t); toast.t = setTimeout(() => toastEl.classList.remove("show"), 3500);
   };
-  form.addEventListener("submit", (e) => {
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailEl = $("#cf-email");
+
+  // Saves the lead into Supabase table `consultation_requests` via the REST API.
+  // RLS on that table only allows INSERT with the public anon key.
+  const saveLead = async (lead) => {
+    const cfg = window.MCI_CONFIG || {};
+    if (!cfg.supabaseUrl || !cfg.supabaseAnonKey) throw new Error("Supabase chưa được cấu hình");
+    const headers = {
+      apikey: cfg.supabaseAnonKey,
+      "Content-Type": "application/json",
+      Prefer: "return=minimal",
+    };
+    // Legacy anon keys are JWTs and also go in Authorization; new sb_publishable_ keys don't.
+    if (cfg.supabaseAnonKey.startsWith("eyJ")) headers.Authorization = `Bearer ${cfg.supabaseAnonKey}`;
+    const res = await fetch(`${cfg.supabaseUrl.replace(/\/$/, "")}/rest/v1/consultation_requests`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(lead),
+    });
+    if (!res.ok) throw new Error(`Supabase ${res.status}: ${await res.text()}`);
+  };
+
+  let sending = false;
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    if (sending) return;
     const bad = $$("[required]", form).filter((el) => {
       const ok = el.value.trim() !== "" && (!el.pattern || new RegExp(`^${el.pattern}$`).test(el.value.trim()));
       el.closest(".field").classList.toggle("invalid", !ok);
       return !ok;
     });
+    const email = emailEl.value.trim();
+    if (email && !emailRe.test(email)) { emailEl.closest(".field").classList.add("invalid"); bad.push(emailEl); }
     if (bad.length) {
       bad.forEach((el) => { const f = el.closest(".field"); f.classList.remove("shake"); void f.offsetWidth; f.classList.add("shake"); });
       bad[0].focus();
       return;
     }
+
     const btn = $("button[type=submit]", form);
+    // Bots filling the hidden honeypot get a fake success and nothing is stored.
+    if ($("#cf-website").value) { form.reset(); toast("Đã gửi thông tin!"); return; }
+
+    sending = true;
     btn.classList.add("is-loading");
-    setTimeout(() => {
-      btn.classList.remove("is-loading");
+    try {
+      await saveLead({
+        full_name: $("#cf-name").value.trim(),
+        phone: $("#cf-phone").value.trim(),
+        email: email || null,
+        track: select.value,
+        message: $("#cf-msg").value.trim() || null,
+        source_page: location.href.slice(0, 300),
+      });
       form.reset(); select.classList.remove("has-value");
-      toast("Đã gửi! MCI sẽ liên hệ với bạn sớm. (bản demo – cần nối với hệ thống thật)");
-    }, 1200);
+      toast("Đã gửi! MCI sẽ liên hệ với bạn trong vòng 24 giờ.");
+    } catch (err) {
+      console.error("[MCI] Không lưu được yêu cầu tư vấn:", err);
+      toast("Chưa gửi được, vui lòng thử lại hoặc gọi 0352.433.233.");
+    } finally {
+      sending = false;
+      btn.classList.remove("is-loading");
+    }
   });
   $$("input, select", form).forEach((el) => el.addEventListener("input", () => el.closest(".field").classList.remove("invalid")));
 })();
