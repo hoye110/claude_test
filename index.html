@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCI Viet Nam Student System</title>
+  <meta name="description" content="MCI Viet Nam Student System – sign in to your learning space." />
+  <meta name="theme-color" content="#f26b1d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Animated background -->
+  <div class="bg" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <div class="grain"></div>
+  </div>
+
+  <header class="topbar reveal" style="--d:0">
+    <a class="brand" href="https://www.mcivietnam.com/" aria-label="MCI Viet Nam home">
+      <span class="brand-mark">M</span>
+      <span class="brand-text">MCI <b>Viet Nam</b></span>
+    </a>
+    <nav class="topnav">
+      <a href="https://mcivietnam.com/blog/">Blog</a>
+      <a href="mailto:cskh@mcivietnam.com">Support</a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <!-- Left: showcase -->
+    <section class="showcase" aria-label="About MCI Student System">
+      <div class="showcase-inner">
+        <span class="pill reveal" style="--d:1"><span class="dot"></span> Student System 2026</span>
+        <h1 class="headline reveal" style="--d:2">
+          Learn smarter.<br />
+          <span class="grad-text">Grow faster.</span>
+        </h1>
+        <p class="lede reveal" style="--d:3">
+          Your courses, assignments, schedule and progress — all in one place, built for MCI students.
+        </p>
+
+        <div class="feature-slider reveal" style="--d:4" id="slider" aria-live="polite">
+          <article class="slide is-active">
+            <div class="slide-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4Zm4 2v5c0 1.7 2.2 3 5 3s5-1.3 5-3V9"/></svg>
+            </div>
+            <div>
+              <h3>Live & recorded classes</h3>
+              <p>Join sessions in one click and rewatch anytime.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slide-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
+            </div>
+            <div>
+              <h3>Track your progress</h3>
+              <p>Scores, attendance and goals updated in real time.</p>
+            </div>
+          </article>
+          <article class="slide">
+            <div class="slide-icon">
+              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+            </div>
+            <div>
+              <h3>Never miss a deadline</h3>
+              <p>Smart reminders for classes, homework and exams.</p>
+            </div>
+          </article>
+          <div class="slider-dots" role="tablist" aria-label="Features">
+            <button class="is-active" aria-label="Feature 1"></button>
+            <button aria-label="Feature 2"></button>
+            <button aria-label="Feature 3"></button>
+          </div>
+        </div>
+
+        <div class="stats reveal" style="--d:5">
+          <div><strong data-count="20000" data-suffix="+">0</strong><span>Students</span></div>
+          <div><strong data-count="150" data-suffix="+">0</strong><span>Courses</span></div>
+          <div><strong data-count="98" data-suffix="%">0</strong><span>Satisfaction</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: auth card -->
+    <section class="auth" aria-label="Account">
+      <div class="card reveal" style="--d:2" id="card">
+        <div class="card-glow" aria-hidden="true"></div>
+
+        <!-- Sign in view -->
+        <div class="view is-active" data-view="signin">
+          <h2>Welcome back <span class="wave">👋</span></h2>
+          <p class="sub">Enter your username and password to sign in.</p>
+
+          <div class="socials">
+            <button class="btn-social" type="button">
+              <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5Z"/></svg>
+              Google
+            </button>
+            <button class="btn-social" type="button">
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>
+              Facebook
+            </button>
+          </div>
+
+          <div class="divider"><span>or continue with</span></div>
+
+          <form class="form" novalidate data-form="signin">
+            <div class="field">
+              <input id="si-user" name="username" type="text" placeholder=" " autocomplete="username" required />
+              <label for="si-user">Username</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
+              <small class="err">Please enter your username.</small>
+            </div>
+            <div class="field">
+              <input id="si-pass" name="password" type="password" placeholder=" " autocomplete="current-password" required />
+              <label for="si-pass">Password</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg>
+              <button class="eye" type="button" aria-label="Show password" data-toggle-pass>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <small class="err">Please enter your password.</small>
+            </div>
+
+            <div class="row">
+              <label class="check"><input type="checkbox" /><span class="box"></span> Keep me logged in</label>
+              <a href="#forgot" class="link" data-go="forgot">Forgot password?</a>
+            </div>
+
+            <button class="btn-primary" type="submit">
+              <span class="btn-label">Sign in</span>
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <p class="switch">Not registered yet? <a href="#register" class="link" data-go="register">Create an account</a></p>
+        </div>
+
+        <!-- Register view -->
+        <div class="view" data-view="register">
+          <button class="back" type="button" data-go="signin" aria-label="Back to sign in">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6"/></svg>
+          </button>
+          <h2>Create your account</h2>
+          <p class="sub">Start your learning journey with MCI in under a minute.</p>
+          <form class="form" novalidate data-form="register">
+            <div class="field">
+              <input id="re-name" type="text" placeholder=" " autocomplete="name" required />
+              <label for="re-name">Full name</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
+              <small class="err">Please enter your name.</small>
+            </div>
+            <div class="field">
+              <input id="re-email" type="email" placeholder=" " autocomplete="email" required />
+              <label for="re-email">Email</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
+              <small class="err">Please enter a valid email.</small>
+            </div>
+            <div class="field">
+              <input id="re-pass" type="password" placeholder=" " autocomplete="new-password" minlength="8" required />
+              <label for="re-pass">Password (min. 8 characters)</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg>
+              <button class="eye" type="button" aria-label="Show password" data-toggle-pass>
+                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+              </button>
+              <div class="strength" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <small class="err">Password must be at least 8 characters.</small>
+            </div>
+            <button class="btn-primary" type="submit">
+              <span class="btn-label">Create account</span>
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+          <p class="switch">Already have an account? <a href="#signin" class="link" data-go="signin">Sign in</a></p>
+        </div>
+
+        <!-- Forgot view -->
+        <div class="view" data-view="forgot">
+          <button class="back" type="button" data-go="signin" aria-label="Back to sign in">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6"/></svg>
+          </button>
+          <div class="hero-icon">
+            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5zM12 15v2"/></svg>
+          </div>
+          <h2>Forgot password?</h2>
+          <p class="sub">No worries — enter your email and we'll send you a reset link.</p>
+          <form class="form" novalidate data-form="forgot">
+            <div class="field">
+              <input id="fo-email" type="email" placeholder=" " autocomplete="email" required />
+              <label for="fo-email">Email</label>
+              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
+              <small class="err">Please enter a valid email.</small>
+            </div>
+            <button class="btn-primary" type="submit">
+              <span class="btn-label">Send reset link</span>
+              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </form>
+          <p class="switch">Remembered it? <a href="#signin" class="link" data-go="signin">Back to sign in</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer reveal" style="--d:6">
+    <span>© 2026 MCI Viet Nam. Made with ♥ by <a href="https://www.mcivietnam.com/">IDP MCI</a></span>
+    <nav>
+      <a href="mailto:cskh@mcivietnam.com">Support</a>
+      <a href="https://www.mcivietnam.com/">Terms of Use</a>
+      <a href="https://mcivietnam.com/blog/">Blog</a>
+    </nav>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
