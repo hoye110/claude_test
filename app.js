@@ -18,7 +18,9 @@
   });
 
   /* ---------- Load reveal ---------- */
-  requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add("is-loaded")));
+  const markLoaded = () => document.body.classList.add("is-loaded");
+  requestAnimationFrame(() => requestAnimationFrame(markLoaded));
+  setTimeout(markLoaded, 300); // fallback: rAF is paused in background tabs
 
   /* ---------- Count-up stats ---------- */
   const fmt = new Intl.NumberFormat("en-US");
