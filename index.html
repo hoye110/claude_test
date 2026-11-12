@@ -1,230 +1,462 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="vi" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MCI Viet Nam Student System</title>
-  <meta name="description" content="MCI Viet Nam Student System – sign in to your learning space." />
+  <title>Học Viện MCI – Khóa học Dữ liệu, AI & Automation</title>
+  <meta name="description" content="Học Viện MCI – Khóa học Dữ liệu, Big Data, AI và Automation hàng đầu cho người mới bắt đầu." />
   <meta name="theme-color" content="#f26b1d" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-  <!-- Animated background -->
-  <div class="bg" aria-hidden="true">
-    <span class="blob blob-1"></span>
-    <span class="blob blob-2"></span>
-    <span class="blob blob-3"></span>
-    <div class="grain"></div>
-  </div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
-  <header class="topbar reveal" style="--d:0">
-    <a class="brand" href="https://www.mcivietnam.com/" aria-label="MCI Viet Nam home">
-      <span class="brand-mark">M</span>
-      <span class="brand-text">MCI <b>Viet Nam</b></span>
-    </a>
-    <nav class="topnav">
-      <a href="https://mcivietnam.com/blog/">Blog</a>
-      <a href="mailto:cskh@mcivietnam.com">Support</a>
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode">
-        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
-      </button>
-    </nav>
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Học viện MCI">
+        <img src="https://mcivietnam.com/media/home/new-logo.png" alt="MCI" width="92" height="42" />
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Điều hướng chính">
+        <div class="nav-item has-menu">
+          <button class="nav-link" type="button" aria-expanded="false">Khóa học <i class="chev"></i></button>
+          <div class="mega">
+            <div class="mega-col">
+              <h4>Theo từng môn</h4>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-python-foundation-in-data-analytics/">Python Foundation in Data Analytics</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-sql-for-newbies-data-analysis-for-beginners/">SQL for Newbies</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-analyzing-and-visualizing-data-on-power-bi/">Power BI: Analyzing & Visualizing</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-excel-for-business-intelligence-analyst/">Excel for BI Analyst</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-ai-coaching-11/">AI Coaching 1:1</a>
+            </div>
+            <div class="mega-col">
+              <h4>Theo lộ trình</h4>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-combo-power-bi-level-1-level-2/">Combo Power BI Level 1 & 2</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-combo-python-level-1-level-2/">Combo Python Level 1 & 2</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-combo-sql-level-1-level-2/">Combo SQL Level 1 & 2</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-business-analyst/">Business Analyst</a>
+            </div>
+            <div class="mega-col">
+              <h4>Chuyển ngành</h4>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-data-analyst-professional-data-analyst-with-python-track/">Data Analyst Professional</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-data-engineer-track/">Data Engineer Track</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-ai-engineer-track/">AI Engineer Track</a>
+              <a href="https://mcivietnam.com/course-detail/khoa-hoc-ai-mastery-2026-he-thong-hoa-tu-ong-hoa-tang-toc-cong-viec/">AI Mastery 2026</a>
+            </div>
+            <a class="mega-cta" href="https://mcivietnam.com/course-list/">
+              <span>Xem tất cả khóa học</span>
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+        <a class="nav-link" href="https://mcivietnam.com/dao-tao-doanh-nghiep/">Doanh nghiệp</a>
+        <a class="nav-link" href="https://mcivietnam.com/schedule-course/">Lịch đào tạo</a>
+        <a class="nav-link" href="https://mcivietnam.com/lecturer-list/">Giảng viên</a>
+        <a class="nav-link" href="https://mcivietnam.com/blog/">Bài viết</a>
+        <a class="nav-link" href="https://mcivietnam.com/about/">Về chúng tôi</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Đổi giao diện sáng/tối">
+          <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+        </button>
+        <a class="btn btn-ghost" href="login.html">Đăng nhập</a>
+        <a class="btn btn-primary hide-sm" href="#lien-he">Tư vấn miễn phí</a>
+        <button class="burger" id="burger" type="button" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
   </header>
 
-  <main class="layout">
-    <!-- Left: showcase -->
-    <section class="showcase" aria-label="About MCI Student System">
-      <div class="showcase-inner">
-        <span class="pill reveal" style="--d:1"><span class="dot"></span> Student System 2026</span>
-        <h1 class="headline reveal" style="--d:2">
-          Learn smarter.<br />
-          <span class="grad-text">Grow faster.</span>
-        </h1>
-        <p class="lede reveal" style="--d:3">
-          Your courses, assignments, schedule and progress — all in one place, built for MCI students.
-        </p>
-
-        <div class="feature-slider reveal" style="--d:4" id="slider" aria-live="polite">
-          <article class="slide is-active">
-            <div class="slide-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 7l9-4 9 4-9 4-9-4Zm4 2v5c0 1.7 2.2 3 5 3s5-1.3 5-3V9"/></svg>
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+        <div class="grid-lines"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="pill reveal"><span class="dot"></span> Khai giảng liên tục tại Hà Nội & TP.HCM</span>
+          <h1 class="reveal" style="--d:1">
+            Làm chủ <span class="grad nowrap">Dữ liệu & AI</span><br />
+            cùng chuyên gia <span class="nowrap">thực chiến</span>
+          </h1>
+          <p class="lede reveal" style="--d:2">
+            Lộ trình Data Analyst, Data Engineer, Business Analyst và AI Automation —
+            hơn 70% thời gian là thực hành, hỗ trợ học lại miễn phí và giới thiệu việc làm.
+          </p>
+          <div class="hero-cta reveal" style="--d:3">
+            <a class="btn btn-primary btn-lg magnetic" href="https://mcivietnam.com/course-list/">
+              Khám phá khóa học
+              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-outline btn-lg" href="#lien-he">Nhận tư vấn lộ trình</a>
+          </div>
+          <div class="hero-trust reveal" style="--d:4">
+            <div class="avatars">
+              <img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien1.png" alt="" />
+              <img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien2.png" alt="" />
+              <img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien3.png" alt="" />
+              <img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien4.png" alt="" />
             </div>
-            <div>
-              <h3>Live & recorded classes</h3>
-              <p>Join sessions in one click and rewatch anytime.</p>
-            </div>
-          </article>
-          <article class="slide">
-            <div class="slide-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
-            </div>
-            <div>
-              <h3>Track your progress</h3>
-              <p>Scores, attendance and goals updated in real time.</p>
-            </div>
-          </article>
-          <article class="slide">
-            <div class="slide-icon">
-              <svg viewBox="0 0 24 24" width="22" height="22"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8 2v4m8-4v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
-            </div>
-            <div>
-              <h3>Never miss a deadline</h3>
-              <p>Smart reminders for classes, homework and exams.</p>
-            </div>
-          </article>
-          <div class="slider-dots" role="tablist" aria-label="Features">
-            <button class="is-active" aria-label="Feature 1"></button>
-            <button aria-label="Feature 2"></button>
-            <button aria-label="Feature 3"></button>
+            <p><strong>20.000+ học viên</strong><br />đã tin chọn MCI</p>
           </div>
         </div>
 
-        <div class="stats reveal" style="--d:5">
-          <div><strong data-count="20000" data-suffix="+">0</strong><span>Students</span></div>
-          <div><strong data-count="150" data-suffix="+">0</strong><span>Courses</span></div>
-          <div><strong data-count="98" data-suffix="%">0</strong><span>Satisfaction</span></div>
+        <div class="hero-visual reveal" style="--d:2">
+          <div class="banner" id="banner">
+            <img class="is-active" src="https://mcivietnam.com/media/home/AI_Agent.jpg" alt="Khóa học xây dựng trợ lý AI Agent" />
+            <img src="https://mcivietnam.com/media/home/ai_mastery_banner.png" alt="AI Mastery 2026" loading="lazy" />
+            <img src="https://mcivietnam.com/media/home/ai_automation_mastery_banner.png" alt="AI Automation Mastery" loading="lazy" />
+            <img src="https://mcivietnam.com/media/home/tinhgondata.jpg" alt="Tinh gọn dữ liệu" loading="lazy" />
+            <img src="https://mcivietnam.com/media/home/ai_n8n_mastery.png" alt="AI n8n Mastery" loading="lazy" />
+            <div class="banner-dots" id="bannerDots"></div>
+          </div>
+          <div class="float-card fc-1">
+            <span class="fc-icon">🎓</span>
+            <div><strong>95%</strong><small>tốt nghiệp có việc làm</small></div>
+          </div>
+          <div class="float-card fc-2">
+            <span class="fc-icon">⭐</span>
+            <div><strong>98%</strong><small>học viên hài lòng</small></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Right: auth card -->
-    <section class="auth" aria-label="Account">
-      <div class="card reveal" style="--d:2" id="card">
-        <div class="card-glow" aria-hidden="true"></div>
+    <!-- ================= STATS ================= -->
+    <section class="stats-wrap">
+      <div class="container">
+        <div class="stats reveal">
+          <div class="stat"><strong data-count="6" data-pad="2">0</strong><span>Năm hoạt động</span></div>
+          <div class="stat"><strong data-count="4" data-pad="2">0</strong><span>Cơ sở tại Hà Nội & HCM</span></div>
+          <div class="stat"><strong data-count="20000" data-suffix="+">0</strong><span>Học viên</span></div>
+          <div class="stat"><strong data-count="700" data-suffix="+">0</strong><span>Doanh nghiệp</span></div>
+          <div class="stat"><strong data-count="95" data-suffix="%">0</strong><span>Có việc làm</span></div>
+          <div class="stat"><strong data-count="98" data-suffix="%">0</strong><span>Hài lòng</span></div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Sign in view -->
-        <div class="view is-active" data-view="signin">
-          <h2>Welcome back <span class="wave">👋</span></h2>
-          <p class="sub">Enter your username and password to sign in.</p>
+    <!-- ================= TRACKS ================= -->
+    <section class="section" id="chuong-trinh">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Chương trình đào tạo</span>
+          <h2>Chọn lộ trình phù hợp với <span class="grad">mục tiêu của bạn</span></h2>
+          <p>Từ người mới bắt đầu đến chuyển ngành — mỗi lộ trình đều bám sát nhu cầu tuyển dụng thực tế.</p>
+        </div>
+        <div class="tracks">
+          <a class="track reveal tilt" style="--d:0" href="https://mcivietnam.com/course-detail/khoa-hoc-data-analyst-professional-data-analyst-with-python-track/">
+            <span class="track-icon">📊</span>
+            <h3>Phân tích dữ liệu</h3>
+            <p>Data Analytics Track</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Power BI</li><li>Excel</li><li>VBA</li></ul>
+            <span class="track-go">Tìm hiểu →</span>
+          </a>
+          <a class="track reveal tilt" style="--d:1" href="https://mcivietnam.com/course-list/">
+            <span class="track-icon">🧠</span>
+            <h3>Khoa học dữ liệu</h3>
+            <p>Data Science Track</p>
+            <ul class="tags"><li>Python</li><li>SQL</li><li>Maths & Statistics</li><li>Power BI</li></ul>
+            <span class="track-go">Tìm hiểu →</span>
+          </a>
+          <a class="track reveal tilt" style="--d:2" href="https://mcivietnam.com/course-detail/khoa-hoc-data-engineer-track/">
+            <span class="track-icon">🛠️</span>
+            <h3>Kỹ sư dữ liệu</h3>
+            <p>Data Engineering Track</p>
+            <ul class="tags"><li>SQL</li><li>NoSQL</li><li>Hadoop</li><li>Spark</li></ul>
+            <span class="track-go">Tìm hiểu →</span>
+          </a>
+          <a class="track track-hot reveal tilt" style="--d:3" href="https://mcivietnam.com/course-detail/khoa-hoc-ai-engineer-track/">
+            <span class="badge">Hot 2026</span>
+            <span class="track-icon">🤖</span>
+            <h3>AI – Ứng dụng & Tự động hóa</h3>
+            <p>AI Engineer · AI Mastery · n8n</p>
+            <ul class="tags"><li>AI Agent</li><li>Claude</li><li>n8n</li><li>Automation</li></ul>
+            <span class="track-go">Tìm hiểu →</span>
+          </a>
+          <a class="track reveal tilt" style="--d:4" href="https://mcivietnam.com/course-detail/khoa-hoc-business-analyst-fast-track/">
+            <span class="track-icon">💼</span>
+            <h3>IT Business Analyst</h3>
+            <p>BA + Data + AI ứng dụng</p>
+            <ul class="tags"><li>BA</li><li>Data</li><li>AI</li></ul>
+            <span class="track-go">Tìm hiểu →</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-          <div class="socials">
-            <button class="btn-social" type="button">
-              <svg viewBox="0 0 48 48" width="18" height="18"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5Z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7Z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44Z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5Z"/></svg>
-              Google
-            </button>
-            <button class="btn-social" type="button">
-              <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#1877F2" d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg>
-              Facebook
-            </button>
-          </div>
-
-          <div class="divider"><span>or continue with</span></div>
-
-          <form class="form" novalidate data-form="signin">
-            <div class="field">
-              <input id="si-user" name="username" type="text" placeholder=" " autocomplete="username" required />
-              <label for="si-user">Username</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
-              <small class="err">Please enter your username.</small>
-            </div>
-            <div class="field">
-              <input id="si-pass" name="password" type="password" placeholder=" " autocomplete="current-password" required />
-              <label for="si-pass">Password</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg>
-              <button class="eye" type="button" aria-label="Show password" data-toggle-pass>
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              </button>
-              <small class="err">Please enter your password.</small>
-            </div>
-
-            <div class="row">
-              <label class="check"><input type="checkbox" /><span class="box"></span> Keep me logged in</label>
-              <a href="#forgot" class="link" data-go="forgot">Forgot password?</a>
-            </div>
-
-            <button class="btn-primary" type="submit">
-              <span class="btn-label">Sign in</span>
-              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
-              <span class="spinner" aria-hidden="true"></span>
-            </button>
-          </form>
-
-          <p class="switch">Not registered yet? <a href="#register" class="link" data-go="register">Create an account</a></p>
+    <!-- ================= COURSES ================= -->
+    <section class="section section-soft" id="khoa-hoc">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Khóa học nổi bật</span>
+          <h2>Học đúng thứ <span class="grad">doanh nghiệp cần</span></h2>
+        </div>
+        <div class="tabs reveal" role="tablist">
+          <button class="tab is-active" role="tab" data-tab="mon">Theo từng môn</button>
+          <button class="tab" role="tab" data-tab="lotrinh">Theo lộ trình</button>
+          <button class="tab" role="tab" data-tab="chuyennganh">Chuyển ngành</button>
+          <span class="tab-ink" aria-hidden="true"></span>
         </div>
 
-        <!-- Register view -->
-        <div class="view" data-view="register">
-          <button class="back" type="button" data-go="signin" aria-label="Back to sign in">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6"/></svg>
-          </button>
-          <h2>Create your account</h2>
-          <p class="sub">Start your learning journey with MCI in under a minute.</p>
-          <form class="form" novalidate data-form="register">
-            <div class="field">
-              <input id="re-name" type="text" placeholder=" " autocomplete="name" required />
-              <label for="re-name">Full name</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M20 21a8 8 0 0 0-16 0M12 13a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
-              <small class="err">Please enter your name.</small>
-            </div>
-            <div class="field">
-              <input id="re-email" type="email" placeholder=" " autocomplete="email" required />
-              <label for="re-email">Email</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
-              <small class="err">Please enter a valid email.</small>
-            </div>
-            <div class="field">
-              <input id="re-pass" type="password" placeholder=" " autocomplete="new-password" minlength="8" required />
-              <label for="re-pass">Password (min. 8 characters)</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg>
-              <button class="eye" type="button" aria-label="Show password" data-toggle-pass>
-                <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-              </button>
-              <div class="strength" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-              <small class="err">Password must be at least 8 characters.</small>
-            </div>
-            <button class="btn-primary" type="submit">
-              <span class="btn-label">Create account</span>
-              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
-              <span class="spinner" aria-hidden="true"></span>
-            </button>
-          </form>
-          <p class="switch">Already have an account? <a href="#signin" class="link" data-go="signin">Sign in</a></p>
-        </div>
-
-        <!-- Forgot view -->
-        <div class="view" data-view="forgot">
-          <button class="back" type="button" data-go="signin" aria-label="Back to sign in">
-            <svg viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m6-6-6 6 6 6"/></svg>
-          </button>
-          <div class="hero-icon">
-            <svg viewBox="0 0 24 24" width="28" height="28"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5zM12 15v2"/></svg>
+        <div class="course-panels">
+          <div class="course-grid is-active" data-panel="mon">
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-python-foundation-in-data-analytics/"><span class="c-tag">Python</span><h3>Python Foundation in Data Analytics</h3><p>Nền tảng Python cho phân tích dữ liệu.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-python-for-machine-learning/"><span class="c-tag">Python</span><h3>Python for Machine Learning</h3><p>Xây dựng mô hình học máy từ dữ liệu thực.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-sql-for-newbies-data-analysis-for-beginners/"><span class="c-tag">SQL</span><h3>SQL for Newbies</h3><p>Data Analysis for Beginners.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-database-and-sql-for-data-science/"><span class="c-tag">SQL</span><h3>Database and SQL for Data Science</h3><p>Thiết kế & truy vấn CSDL chuyên sâu.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-analyzing-and-visualizing-data-on-power-bi/"><span class="c-tag">Power BI</span><h3>Analyzing & Visualizing Data on Power BI</h3><p>Dashboard trực quan, chuẩn doanh nghiệp.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-applying-power-bi-in-business-intelligence/"><span class="c-tag">Power BI</span><h3>Applying Power BI in Business Intelligence</h3><p>Ứng dụng BI vào bài toán kinh doanh.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-mastering-vba-from-basics-to-applications/"><span class="c-tag">VBA</span><h3>Mastering VBA</h3><p>Từ cơ bản đến ứng dụng tự động hóa.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-mastering-data-warehouse-data-lake-from-basics-to-applications/"><span class="c-tag">Data Warehouse</span><h3>Mastering Data Warehouse & Data Lake</h3><p>Kiến trúc kho dữ liệu hiện đại.</p><span class="c-go">Chi tiết →</span></a>
           </div>
-          <h2>Forgot password?</h2>
-          <p class="sub">No worries — enter your email and we'll send you a reset link.</p>
-          <form class="form" novalidate data-form="forgot">
-            <div class="field">
-              <input id="fo-email" type="email" placeholder=" " autocomplete="email" required />
-              <label for="fo-email">Email</label>
-              <svg class="f-icon" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></svg>
-              <small class="err">Please enter a valid email.</small>
+          <div class="course-grid" data-panel="lotrinh">
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-combo-power-bi-level-1-level-2/"><span class="c-tag">Combo</span><h3>Combo Power BI Level 1 & Level 2</h3><p>Từ trực quan hóa đến BI nâng cao.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-combo-python-level-1-level-2/"><span class="c-tag">Combo</span><h3>Combo Python Level 1 & Level 2</h3><p>Phân tích dữ liệu đến Machine Learning.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-combo-sql-level-1-level-2/"><span class="c-tag">Combo</span><h3>Combo SQL Level 1 & Level 2</h3><p>Truy vấn cơ bản đến tối ưu hiệu năng.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-business-analyst/"><span class="c-tag">BA</span><h3>Business Analyst</h3><p>Phân tích nghiệp vụ bài bản.</p><span class="c-go">Chi tiết →</span></a>
+          </div>
+          <div class="course-grid" data-panel="chuyennganh">
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-data-analyst-professional-data-analyst-with-python-track/"><span class="c-tag">Track</span><h3>Data Analyst Professional</h3><p>Data Analyst with Python Track.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-business-intelligence-track/"><span class="c-tag">Track</span><h3>Business Intelligence Track</h3><p>Trở thành chuyên viên BI.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-data-engineer-track/"><span class="c-tag">Track</span><h3>Data Engineer Track</h3><p>Pipeline, Big Data, Spark.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-ai-engineer-track/"><span class="c-tag">Track</span><h3>AI Engineer Track</h3><p>Xây dựng sản phẩm AI thực tế.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-data-foundation-track/"><span class="c-tag">Track</span><h3>Data Foundation Track</h3><p>Nền tảng dữ liệu cho người mới.</p><span class="c-go">Chi tiết →</span></a>
+            <a class="course" href="https://mcivietnam.com/course-detail/khoa-hoc-ai-workflow-mastery-2026-lam-chu-claude-xay-agent-tu-ong-hoa/"><span class="c-tag">AI</span><h3>AI Workflow Mastery 2026</h3><p>Làm chủ Claude – Xây Agent – Tự động hóa.</p><span class="c-go">Chi tiết →</span></a>
+          </div>
+        </div>
+        <div class="center reveal"><a class="btn btn-outline" href="https://mcivietnam.com/course-list/">Xem tất cả khóa học</a></div>
+      </div>
+    </section>
+
+    <!-- ================= WHY ================= -->
+    <section class="section" id="tai-sao">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tại sao nên chọn MCI?</span>
+          <h2>Học thật, làm thật, <span class="grad">có việc thật</span></h2>
+        </div>
+        <div class="bento">
+          <article class="why why-lg reveal">
+            <span class="why-num">70%</span>
+            <h3>Chương trình học bám sát thực tế</h3>
+            <p>Hơn 70% thời gian đào tạo là thực hành, giải quyết các bài toán thực tế cho từng công việc và từng lĩnh vực cụ thể.</p>
+          </article>
+          <article class="why reveal" style="--d:1"><span class="why-icon">📜</span><h3>Cấp phép</h3><p>Nhận chứng nhận sau khóa học, được cấp phép bởi Sở Giáo dục – Đào tạo Hà Nội.</p></article>
+          <article class="why reveal" style="--d:2"><span class="why-icon">👨‍🏫</span><h3>Giảng viên chuyên gia</h3><p>7–15 năm kinh nghiệm làm việc trong lĩnh vực phân tích dữ liệu.</p></article>
+          <article class="why reveal" style="--d:1"><span class="why-icon">🔄</span><h3>Học lại miễn phí</h3><p>Không giới hạn, đến khi nắm vững kiến thức.</p></article>
+          <article class="why reveal" style="--d:2"><span class="why-icon">🚀</span><h3>Cập nhật liên tục</h3><p>Chương trình luôn theo kịp công nghệ và xu hướng mới nhất.</p></article>
+          <article class="why why-wide reveal" style="--d:3"><span class="why-icon">🤝</span><h3>Hỗ trợ việc làm</h3><p>Chỉnh sửa CV, xây dựng Portfolio và giới thiệu đến doanh nghiệp đối tác.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PARTNERS ================= -->
+    <section class="partners reveal" aria-label="Đối tác">
+      <p class="partners-title">Góp phần vào sự phát triển của <strong>700+ doanh nghiệp</strong> đối tác</p>
+      <div class="marquee">
+        <div class="marquee-track" id="partnerTrack">
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company1.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company2.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company3.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company4.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company0.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company5.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company6.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company7.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company8.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company9.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company10.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company11.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company12.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company13.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company15.png" alt="Đối tác" loading="lazy" />
+          <img src="https://mcivietnam.com/media/images/imgDownAWS/company17.png" alt="Đối tác" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= LECTURERS ================= -->
+    <section class="section section-soft" id="giang-vien">
+      <div class="container">
+        <div class="section-head row-head reveal">
+          <div>
+            <span class="eyebrow">Đội ngũ giảng viên</span>
+            <h2>Học từ những người <span class="grad">đang làm nghề</span></h2>
+            <p>Chuyên gia giữ vị trí quan trọng tại các doanh nghiệp, tổ chức lớn.</p>
+          </div>
+          <div class="carousel-nav">
+            <button class="round-btn" data-scroll="-1" aria-label="Trước"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="round-btn" data-scroll="1" aria-label="Sau"><svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="lecturers reveal" id="lecturers">
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/nguyenthilamphuong.png" alt="Nguyễn Thị Lam Phương" loading="lazy" /></div><figcaption><strong>Ms. Nguyễn Thị Lam Phương</strong><span>Excel</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/doanthanhgiang.png" alt="Doãn Thanh Giang" loading="lazy" /></div><figcaption><strong>Mr. Doãn Thanh Giang</strong><span>Business Analyst</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/buithanhtu.png" alt="Bùi Thanh Tú" loading="lazy" /></div><figcaption><strong>Mr. Bùi Thanh Tú</strong><span>SQL</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/hakimdung.png" alt="Hà Kim Dung" loading="lazy" /></div><figcaption><strong>Ms. Hà Kim Dung</strong><span>Excel, VBA</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/cathoangduong.png" alt="Cát Hoàng Dương" loading="lazy" /></div><figcaption><strong>Mr. Cát Hoàng Dương</strong><span>Power BI</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/letienmanh.png" alt="Lê Tiến Mạnh" loading="lazy" /></div><figcaption><strong>Mr. Lê Tiến Mạnh</strong><span>SQL, Excel, Power BI</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/nguyenhuudat.png" alt="Nguyễn Hữu Đạt" loading="lazy" /></div><figcaption><strong>Mr. Nguyễn Hữu Đạt</strong><span>Python, VBA, Excel, SQL</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/nguyenkimquang.png" alt="Nguyễn Kim Quang" loading="lazy" /></div><figcaption><strong>Mr. Nguyễn Kim Quang</strong><span>Python, MA, SQL, Power BI</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/taquockhanh.png" alt="Tạ Quốc Khánh" loading="lazy" /></div><figcaption><strong>Mr. Tạ Quốc Khánh</strong><span>SQL, MA</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/lehoaithanh.png" alt="Lê Hoài Thanh" loading="lazy" /></div><figcaption><strong>Mr. Lê Hoài Thanh</strong><span>Python, SQL</span></figcaption></figure>
+          <figure class="lect"><div class="lect-img"><img src="https://mcivietnam.com/media/images/imgDownAWS/tranthanhtam.png" alt="Trần Thành Tâm" loading="lazy" /></div><figcaption><strong>Mr. Trần Thành Tâm</strong><span>Python</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS ================= -->
+    <section class="section" id="hoc-vien">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Học viên nói gì về MCI</span>
+          <h2>Những câu chuyện <span class="grad">chuyển mình</span></h2>
+        </div>
+      </div>
+      <div class="testi-marquee reveal">
+        <div class="testi-track" id="testiTrack">
+          <blockquote class="testi"><p>“Khóa học thật sự thú vị và hấp dẫn. Nhờ vào việc hướng dẫn có tâm và nhiệt tình của thầy…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien1.png" alt="" loading="lazy" /><div><strong>Hồ Văn Cường</strong><span>Chuyên viên Machine Learning · VP Bank</span></div></footer></blockquote>
+          <blockquote class="testi"><p>“Mình vừa hoàn tất khóa học tại trung tâm. Thầy dạy rất nhiệt tình, tốc độ đảm bảo để tất cả…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien2.png" alt="" loading="lazy" /><div><strong>Nguyễn Hồng Nhung</strong><span>Business Analyst · Fsoft</span></div></footer></blockquote>
+          <blockquote class="testi"><p>“Chương trình học rất hay, xứng đáng với chi phí và thời gian bỏ ra để học. Cập nhật nhiều kiến thức…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien3.png" alt="" loading="lazy" /><div><strong>Ngô Trường Sơn</strong><span>Trưởng nhóm Data Scientist · Techcombank</span></div></footer></blockquote>
+          <blockquote class="testi"><p>“Các kiến thức của MCI đào tạo bám sát với yêu cầu của các doanh nghiệp. Nhờ có các khóa học…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien4.png" alt="" loading="lazy" /><div><strong>Nguyễn Minh Hiếu</strong><span>Chuyên viên phân tích dữ liệu · Citigo</span></div></footer></blockquote>
+          <blockquote class="testi"><p>“Mình được học trực tiếp với giảng viên có kinh nghiệm thực chiến. Những gì mình học được…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien5.png" alt="" loading="lazy" /><div><strong>Nguyễn Quỳnh Chi</strong><span>Data Scientist · Shopee</span></div></footer></blockquote>
+          <blockquote class="testi"><p>“Trong quá trình học các mentor rất là nhiệt tình, luôn luôn support và giải đáp các câu hỏi…”</p><footer><img src="https://mcivietnam.com/media/images/imgDownAWS/avt_hocvien6.png" alt="" loading="lazy" /><div><strong>Hoàng Minh Hà</strong><span>Business Intelligence · MB Bank</span></div></footer></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BLOG ================= -->
+    <section class="section section-soft" id="bai-viet">
+      <div class="container">
+        <div class="section-head row-head reveal">
+          <div>
+            <span class="eyebrow">Bản tin nổi bật</span>
+            <h2>Kiến thức & <span class="grad">xu hướng mới</span></h2>
+          </div>
+          <a class="btn btn-outline" href="https://mcivietnam.com/blog/">Xem blog</a>
+        </div>
+        <div class="posts">
+          <a class="post post-lg reveal" href="https://mcivietnam.com/blog-detail/mci-academy-ong-hanh-va-trao-hoc-bong-tai-le-be-giang-khoa-ke-toan-hoc-vien-tai-chinh-aof-ZGOFQ4/">
+            <div class="post-img"><img src="https://cdn.mcivietnam.com/nhanvien/media/Blog/1pngq9blgz.png" alt="" loading="lazy" /></div>
+            <div class="post-body"><span class="post-meta">Đối tác MCI · 05/09/2026</span><h3>MCI Academy đồng hành và trao học bổng tại Lễ bế giảng Khoa Kế toán – Học viện Tài chính AOF</h3></div>
+          </a>
+          <a class="post reveal" style="--d:1" href="https://mcivietnam.com/blog-detail/ai-se-thay-oi-data-analyst-nhu-the-nao-trong-nhung-nam-toi-TSGPP9/">
+            <div class="post-img"><img src="https://cdn.mcivietnam.com/nhanvien/media/Blog/websitepngoemmwm.png" alt="" loading="lazy" /></div>
+            <div class="post-body"><span class="post-meta">Chia sẻ kinh nghiệm · 31/07/2026</span><h3>AI sẽ thay đổi Data Analyst như thế nào trong những năm tới?</h3></div>
+          </a>
+          <a class="post reveal" style="--d:2" href="https://mcivietnam.com/blog-detail/azure-databricks-july-2026-release-notes-nhung-cap-nhat-noi-bat-giup-doanh-nghiep-tang-toc-ai-va-qua-NR8WR4/">
+            <div class="post-img"><img src="https://cdn.mcivietnam.com/nhanvien/media/Blog/dieu-linhjpgwmthc7.jpg" alt="" loading="lazy" /></div>
+            <div class="post-body"><span class="post-meta">Tin tức · 30/07/2026</span><h3>Azure Databricks July 2026: những cập nhật nổi bật</h3></div>
+          </a>
+          <a class="post reveal" style="--d:1" href="https://mcivietnam.com/blog-detail/ai-agent-len-ngoi-hoi-quy-tuyen-tinh-co-tro-thanh-o-co-89QBCM/">
+            <div class="post-img"><img src="https://cdn.mcivietnam.com/nhanvien/media/Blog/independence-freedom-split-poster-14pngg0ai85.png" alt="" loading="lazy" /></div>
+            <div class="post-body"><span class="post-meta">Kiến thức chuyên môn · 08/09/2026</span><h3>AI Agent lên ngôi, hồi quy tuyến tính có trở thành "đồ cổ"?</h3></div>
+          </a>
+          <a class="post reveal" style="--d:2" href="https://mcivietnam.com/blog-detail/no-ky-thuat-ai-la-gi-tai-sao-doanh-nghiep-can-chuan-hoa-claude-skills-QSEBMY/">
+            <div class="post-img"><img src="https://cdn.mcivietnam.com/nhanvien/media/Blog/independence-freedom-split-poster-11pngvqj8h8.png" alt="" loading="lazy" /></div>
+            <div class="post-body"><span class="post-meta">Tin tức · 07/09/2026</span><h3>Nợ kỹ thuật AI là gì? Tại sao doanh nghiệp cần chuẩn hóa Claude Skills?</h3></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="lien-he">
+      <div class="container">
+        <div class="contact reveal">
+          <div class="contact-info">
+            <span class="eyebrow light">Liên hệ chúng tôi</span>
+            <h2>Nhận tư vấn lộ trình <br />học <em>miễn phí</em></h2>
+            <p>Để lại thông tin, đội ngũ MCI sẽ liên hệ trong vòng 24 giờ.</p>
+            <div class="campus">
+              <h4>Hà Nội</h4>
+              <p>CS1: Tầng 5, Tòa StarCity, 23 Lê Văn Lương, Thanh Xuân</p>
+              <p>CS2: Tầng 2A, tòa Mỹ Sơn, 62 Nguyễn Huy Tưởng, Thanh Xuân</p>
+              <h4>TP. Hồ Chí Minh</h4>
+              <p>CS chính: Tòa nhà Xuri, 112 Cao Thắng, P. Bàn Cờ</p>
+              <p>CS2: 224 Điện Biên Phủ, P. Xuân Hòa</p>
             </div>
-            <button class="btn-primary" type="submit">
-              <span class="btn-label">Send reset link</span>
-              <svg class="arrow" viewBox="0 0 24 24" width="18" height="18"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></svg>
-              <span class="spinner" aria-hidden="true"></span>
-            </button>
+            <div class="contact-links">
+              <a href="tel:0352433233">📞 0352.433.233</a>
+              <a href="mailto:cskh@mcivietnam.com">✉️ cskh@mcivietnam.com</a>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field"><input id="cf-name" type="text" placeholder=" " required /><label for="cf-name">Họ và tên *</label></div>
+            <div class="field"><input id="cf-phone" type="tel" placeholder=" " required pattern="[0-9 .+]{9,}" /><label for="cf-phone">Số điện thoại *</label></div>
+            <div class="field"><input id="cf-email" type="email" placeholder=" " /><label for="cf-email">Email</label></div>
+            <div class="field">
+              <select id="cf-track" required>
+                <option value="" selected disabled hidden></option>
+                <option>Phân tích dữ liệu</option>
+                <option>Khoa học dữ liệu</option>
+                <option>Kỹ sư dữ liệu</option>
+                <option>AI – Ứng dụng & Tự động hóa</option>
+                <option>IT Business Analyst</option>
+                <option>Đào tạo doanh nghiệp</option>
+              </select>
+              <label for="cf-track">Lộ trình quan tâm *</label>
+            </div>
+            <div class="field"><textarea id="cf-msg" rows="3" placeholder=" "></textarea><label for="cf-msg">Nội dung</label></div>
+            <button class="btn btn-primary btn-lg btn-block" type="submit"><span class="btn-label">Gửi thông tin</span><span class="spinner" aria-hidden="true"></span></button>
+            <p class="form-note">Bằng việc gửi thông tin, bạn đồng ý với <a href="https://mcivietnam.com/privacy-policy/">chính sách bảo mật</a>.</p>
           </form>
-          <p class="switch">Remembered it? <a href="#signin" class="link" data-go="signin">Back to sign in</a></p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer reveal" style="--d:6">
-    <span>© 2026 MCI Viet Nam. Made with ♥ by <a href="https://www.mcivietnam.com/">IDP MCI</a></span>
-    <nav>
-      <a href="mailto:cskh@mcivietnam.com">Support</a>
-      <a href="https://www.mcivietnam.com/">Terms of Use</a>
-      <a href="https://mcivietnam.com/blog/">Blog</a>
-    </nav>
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <img src="https://mcivietnam.com/media/home/new-logo.png" alt="MCI" width="110" height="50" />
+        <p>Học viện Công nghệ MCI — đào tạo Dữ liệu, Big Data, AI & Automation hàng đầu cho người mới bắt đầu.</p>
+        <a class="fb" href="https://www.facebook.com/mcitrainingcenter">Facebook · 95.7k người theo dõi</a>
+      </div>
+      <div>
+        <h4>Chương trình</h4>
+        <a href="https://mcivietnam.com/course-list/">Data Analytics Track</a>
+        <a href="https://mcivietnam.com/course-list/">Data Science Track</a>
+        <a href="https://mcivietnam.com/course-list/">Data Engineering Track</a>
+        <a href="https://mcivietnam.com/course-list/">AI – Ứng dụng & Tự động hóa</a>
+        <a href="https://mcivietnam.com/course-list/">IT Business Analyst</a>
+      </div>
+      <div>
+        <h4>Về MCI</h4>
+        <a href="https://mcivietnam.com/about/">Học viện MCI</a>
+        <a href="https://mcivietnam.com/lecturer-list/">Giảng viên</a>
+        <a href="https://mcivietnam.com/student-list/">Thành tích học viên</a>
+        <a href="https://mcivietnam.com/mci-job-list/">Tuyển dụng</a>
+        <a href="https://mcivietnam.com/frequently-asked-questions/">Câu hỏi thường gặp</a>
+      </div>
+      <div>
+        <h4>Hotline</h4>
+        <a href="tel:0352433233">Tư vấn khóa học: 0352.433.233</a>
+        <a href="tel:0988228745">Đào tạo doanh nghiệp</a>
+        <a href="tel:0982521378">Khiếu nại CEO: 0982 521 378</a>
+        <a href="mailto:cskh@mcivietnam.com">cskh@mcivietnam.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Công ty Cổ phần Giải pháp Công nghệ MCI · MST 0110397816 · Tầng 5, Star City, 23 Lê Văn Lương, Hà Nội</p>
+      <a href="https://mcivietnam.com/privacy-policy/">Chính sách bảo mật</a>
+    </div>
   </footer>
 
+  <a class="to-top" id="toTop" href="#" aria-label="Lên đầu trang">
+    <svg viewBox="0 0 24 24" width="20" height="20"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 19V5m-6 6 6-6 6 6"/></svg>
+  </a>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>

@@ -1,18 +1,25 @@
-# MCI Viet Nam – Student System (redesign)
+# Học viện MCI – giao diện mới
 
-Giao diện mới cho trang đăng nhập [mcivietnam.com](https://mcivietnam.com/): tone cam, phong cách hiện đại (gradient mờ, kính mờ, bo góc lớn) lấy cảm hứng từ bộ *Startup 3 Blocks* của Designmodo.
+Bản làm lại giao diện trang chủ [mcivietnam.com](https://mcivietnam.com/) theo tone cam, phong cách hiện đại (gradient mờ, bo góc lớn, kính mờ), lấy cảm hứng từ bộ *Startup 3 Blocks* của Designmodo.
 
-## Tính năng
+## Các trang
 
-- Bố cục 2 cột: phần giới thiệu (tiêu đề gradient động, slider tính năng, số liệu đếm tăng dần) + thẻ đăng nhập.
-- 3 màn hình **Sign in / Register / Forgot password** chuyển cảnh mượt (trượt + mờ + co giãn chiều cao thẻ), có hash `#register`, `#forgot`.
-- Hiệu ứng: hiện dần khi tải trang, blob nền trôi + parallax theo chuột, spotlight trên thẻ, ripple khi bấm nút, nhãn nổi trong ô nhập, rung khi lỗi, đo độ mạnh mật khẩu.
-- Light / Dark mode (nhớ lựa chọn), responsive cho mobile, tôn trọng `prefers-reduced-motion`.
+| File | Nội dung |
+| --- | --- |
+| `index.html` + `home.css` + `home.js` | Trang chủ mcivietnam.com |
+| `login.html` + `styles.css` + `app.js` | Trang đăng nhập học viên (mở từ nút "Đăng nhập") |
 
-## Chạy thử
+## Trang chủ gồm
 
-Chỉ là HTML/CSS/JS tĩnh — mở `index.html` trực tiếp hoặc phục vụ thư mục bằng bất kỳ static server nào.
+Header dính với mega-menu khóa học · Hero với banner tự chuyển · Số liệu đếm tăng dần · 5 lộ trình đào tạo · Khóa học nổi bật theo tab · Lý do chọn MCI (bento) · Dải logo đối tác chạy vòng · Giảng viên (carousel) · Cảm nhận học viên · Bài viết · Form tư vấn · Footer.
+
+Hiệu ứng: hiện dần khi cuộn, thanh tiến trình cuộn, header thu gọn khi cuộn, thẻ nghiêng 3D theo chuột, nút "hút" theo chuột, tab có thanh trượt, menu mobile mở dạng rèm. Có Light/Dark mode, responsive, tôn trọng `prefers-reduced-motion`.
 
 ## Lưu ý
 
-Các form hiện chỉ là **demo phía giao diện** (kiểm tra dữ liệu và hiện thông báo). Cần nối vào API đăng nhập/đăng ký thật của hệ thống trong `app.js` (phần `form.addEventListener("submit", ...)`).
+- Ảnh (logo, banner, giảng viên, đối tác, bài viết) đang lấy trực tiếp từ `mcivietnam.com` / `cdn.mcivietnam.com`.
+- Form tư vấn và form đăng nhập hiện chỉ là **demo phía giao diện**; cần nối vào API thật.
+
+## Chạy & deploy
+
+HTML/CSS/JS tĩnh — mở `index.html` hoặc dùng bất kỳ static server nào. Deploy bằng `Dockerfile` (nginx, nghe cổng `$PORT`) — dùng được cho Railway.
